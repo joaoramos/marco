@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic");
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  color: #333333;
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  line-height: 1.6; }
+
+.wrapper {
+  padding: 1em 2em;
+  max-width: 50em;
+  margin: auto; }
+  .wrapper.wide {
+    max-width: 65em; }
+
+.poster {
+  display: block;
+  overflow: hidden; }
+  @media (min-width: 768px) {
+    .poster {
+      padding-top: 8em;
+      padding-bottom: 8em; } }
+  .poster h1,
+  .poster h2 {
+    font-size: 2em;
+    line-height: 1.2; }
+    @media (min-width: 768px) {
+      .poster h1,
+      .poster h2 {
+        line-height: 1.4; } }
+  .poster h2 {
+    color: #777777; }
+  .poster .description {
+    width: 80%;
+    float: left; }
+  .poster .picture {
+    width: 20%;
+    float: left;
+    background-image: url("../img/perfil.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 2em;
+    right: 0;
+    height: 5em; }
+    @media (min-width: 768px) {
+      .poster .picture {
+        height: 10em;
+        top: 5em; } }
+
+.body h3 {
+  color: #C8C8C8;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 1em; }
+
+.body li {
+  margin-bottom: 1em; }
+
+.body .summary {
+  display: block;
+  overflow: hidden; }
+
+@media (min-width: 768px) {
+  .body .column {
+    width: 50%;
+    float: left;
+    padding-right: 5em; } }
+
+.body .background {
+  color: #777777; }
+
+footer .top {
+  display: block;
+  overflow: hidden;
+  background: #008FBE;
+  padding: 2em 0; }
+  @media (min-width: 768px) {
+    footer .top {
+      padding: 2em 0 3em; } }
+  footer .top ul {
+    display: inline; }
+    @media (min-width: 768px) {
+      footer .top ul {
+        display: block;
+        width: 33%;
+        float: left; } }
+  footer .top li {
+    display: inline-block; }
+    @media (min-width: 768px) {
+      footer .top li {
+        display: block; } }
+  footer .top a {
+    text-decoration: none;
+    border-bottom: 2px solid #f2f2f2;
+    padding: .5em;
+    line-height: 3;
+    color: #f2f2f2; }
+    @media (min-width: 768px) {
+      footer .top a {
+        display: inline-block;
+        border-bottom: 2px solid transparent;
+        padding: .4em 0 .1em;
+        line-height: 1.6; } }
+    footer .top a:link, footer .top a:visited {
+      background: rgba(0, 0, 0, 0.2);
+      border-bottom: 2px solid #f2f2f2; }
+      @media (min-width: 768px) {
+        footer .top a:link, footer .top a:visited {
+          background: none;
+          border-bottom: 2px solid transparent; } }
+    footer .top a:hover, footer .top a:active, footer .top a:focus {
+      background: rgba(0, 0, 0, 0.4);
+      border-bottom: 2px solid #f2f2f2; }
+      @media (min-width: 768px) {
+        footer .top a:hover, footer .top a:active, footer .top a:focus {
+          background: none; } }

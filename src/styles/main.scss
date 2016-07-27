@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic');
+@import 'reset';
+
+$colorSea:          #008FBE;
+$colorWhite:        #f2f2f2;
+$colorGreyDark:     #333333;
+$colorGreyMedium:   #777777;
+$colorGreyLight:    #C8C8C8;
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+// Mixins
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+// Styles
+* { box-sizing: border-box }
+
+body {
+  color: $colorGreyDark;
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.wrapper {
+  padding: 1em 2em;
+  max-width: 50em;
+  margin: auto;
+
+  &.wide {
+    max-width: 65em;
+  }
+}
+
+.poster {
+  display: block;
+  overflow: hidden;
+
+  @include tablet {
+    padding-top: 8em;
+    padding-bottom: 8em;
+  }
+
+  h1,
+  h2 {
+    font-size: 2em;
+    line-height: 1.2;
+
+    @include tablet {
+      line-height: 1.4;
+    }
+  }
+
+  h2 {
+    color: $colorGreyMedium;
+  }
+
+  .description {
+    width: 80%;
+    float: left;
+  }
+
+  .picture {
+    width: 20%;
+    float: left;
+    background-image: url('../img/perfil.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 2em;
+    right: 0;
+    height: 5em;
+
+    @include tablet {
+      height: 10em;
+      top: 5em;
+    }
+  }
+}
+
+.body {
+  h3 {
+    color: $colorGreyLight;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 1em;
+  }
+
+  li {
+    margin-bottom: 1em;
+  }
+
+  .summary {
+    display: block;
+    overflow: hidden;
+  }
+
+  .column {
+    @include tablet {
+      width: 50%;
+      float: left;
+      padding-right: 5em;
+    }
+  }
+
+  .background {
+    color: $colorGreyMedium;
+  }
+}
+
+footer .top {
+  display: block;
+  overflow: hidden;
+  background: $colorSea;
+  padding: 2em 0;
+
+  @include tablet {
+    padding: 2em 0 3em;
+  }
+
+  ul {
+    display: inline;
+
+    @include tablet {
+      display: block;
+      width: 33%;
+      float: left;
+    }
+  }
+
+  li {
+    display: inline-block;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 2px solid $colorWhite;
+    padding: .5em;
+    line-height: 3;
+    color: $colorWhite;
+
+    @include tablet {
+      display: inline-block;
+      border-bottom: 2px solid transparent;
+      padding: .4em 0 .1em;
+      line-height: 1.6;
+    }
+
+    &:link,
+    &:visited {
+      background: rgba(black, .2);
+      border-bottom: 2px solid $colorWhite;
+
+      @include tablet {
+        background: none;
+        border-bottom: 2px solid transparent;
+      }
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: rgba(black, .4);
+      border-bottom: 2px solid $colorWhite;
+
+      @include tablet {
+        background: none;
+      }
+    }
+  }
+}
