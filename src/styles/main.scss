@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700');
 @import 'reset';
 
 $colorSea:          #008FBE;
@@ -7,18 +8,18 @@ $colorGreyDark:     #333333;
 $colorGreyMedium:   #777777;
 $colorGreyLight:    #C8C8C8;
 
-$tablet-width: 768px;
-$desktop-width: 1024px;
+$lora: 'Lora', serif;
+$playfair: 'Playfair Display', serif;
 
 // Mixins
 @mixin tablet {
-  @media (min-width: #{$tablet-width}) {
+  @media (min-width: 660px) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (min-width: #{$desktop-width}) {
+  @media (min-width: 1024px) {
     @content;
   }
 }
@@ -26,11 +27,34 @@ $desktop-width: 1024px;
 // Styles
 * { box-sizing: border-box }
 
+::selection {
+  background: $colorSea;
+  color: $colorWhite;
+}
+
+::-moz-selection {
+  background: $colorSea;
+  color: $colorWhite;
+}
+
+a {
+  text-decoration: none;
+  color: $colorSea;
+}
+
 body {
   color: $colorGreyDark;
-  font-family: 'Lora', serif;
+  font-family: $lora;
   font-size: 16px;
   line-height: 1.6;
+  background-image: url('../img/perfil.png');
+  background-repeat: no-repeat;
+  background-size: 30vw;
+  background-position: right top;
+
+  @include tablet { background-position-y: -2em }
+
+  @include desktop { background-position-y: -5vw }
 }
 
 .wrapper {
@@ -44,57 +68,41 @@ body {
 }
 
 .poster {
-  display: block;
-  overflow: hidden;
-
   @include tablet {
-    padding-top: 8em;
-    padding-bottom: 8em;
+    padding-top: 7em;
+    padding-bottom: 7em;
   }
 
-  h1,
-  h2 {
-    font-size: 2em;
-    line-height: 1.2;
-
-    @include tablet {
-      line-height: 1.4;
-    }
-  }
-
-  h2 {
-    color: $colorGreyMedium;
+  @include desktop {
+    padding-top: 11em;
+    padding-bottom: 11em;
   }
 
   .description {
-    width: 80%;
-    float: left;
-  }
+    width: 70%;
 
-  .picture {
-    width: 20%;
-    float: left;
-    background-image: url('../img/perfil.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 2em;
-    right: 0;
-    height: 5em;
+    h1,
+    h2 {
+      font-family: $playfair;
+      font-size: 2em;
+      line-height: 1.2;
 
-    @include tablet {
-      height: 10em;
-      top: 5em;
+      @include tablet {
+        font-size: 2.5em;
+      }
+    }
+
+    h2 {
+      color: $colorGreyMedium;
     }
   }
 }
 
 .body {
   h3 {
+    font-family: $playfair;
     color: $colorGreyLight;
-    font-weight: bold;
-    font-style: italic;
+    font-weight: 700;
     margin-bottom: 1em;
   }
 
@@ -108,26 +116,53 @@ body {
   }
 
   .column {
+    margin-top: 2em;
+
     @include tablet {
       width: 50%;
       float: left;
-      padding-right: 5em;
+      margin-top: 0em;
     }
   }
 
   .background {
-    color: $colorGreyMedium;
+    @include tablet { padding-right: 3em }
+  }
+
+  .experience {
+    @include tablet { padding-left: 3em }
+  }
+
+  .appointment {
+    padding: 4em 0 3em;
+  }
+
+  small {
+    font-size: .8em;
+  }
+
+  .button {
+    background: $colorSea;
+    color: $colorWhite;
+    font-weight: 700;
+    padding: 1em 2em;
+    border-radius: 3px;
   }
 }
 
 footer .top {
+  background-color: $colorSea;
   display: block;
   overflow: hidden;
-  background: $colorSea;
   padding: 2em 0;
 
   @include tablet {
-    padding: 2em 0 3em;
+    background-color: transparent;
+    background-image: url('../img/blue-poly.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    padding: 11em 0 6em;
   }
 
   ul {
@@ -135,8 +170,13 @@ footer .top {
 
     @include tablet {
       display: block;
-      width: 33%;
+      width: 20%;
+      margin-right: 20%;
       float: left;
+    }
+
+    &:last-child {
+      @include tablet { margin-right: 0 }
     }
   }
 
@@ -148,8 +188,20 @@ footer .top {
     }
   }
 
+  .schedule {
+    font-weight: 700;
+
+    @include tablet {
+      width: 10em;
+      padding: .5em 0;
+
+      a {
+        display: inline;
+      }
+    }
+  }
+
   a {
-    text-decoration: none;
     border-bottom: 2px solid $colorWhite;
     padding: .5em;
     line-height: 3;
@@ -183,5 +235,36 @@ footer .top {
         background: none;
       }
     }
+  }
+}
+
+footer .bottom {
+  padding: 4em 2em;
+  overflow: hidden;
+}
+
+footer .address {
+  text-align: center;
+
+  @include tablet {
+    text-align: left;
+    width: 75%;
+    float: left;
+  }
+}
+
+footer .logo {
+  height: 3em;
+  margin: 3em 0 0;
+  background-image: url('../img/blue-logo.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top;
+
+  @include tablet {
+    margin: 0;
+    width: 25%;
+    float: left;
+    background-position: right top;
   }
 }

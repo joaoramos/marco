@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700");
+@import url("https://fonts.googleapis.com/css?family=Lora:400,700");
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -49,11 +50,33 @@ table {
 * {
   box-sizing: border-box; }
 
+::selection {
+  background: #008FBE;
+  color: #f2f2f2; }
+
+::-moz-selection {
+  background: #008FBE;
+  color: #f2f2f2; }
+
+a {
+  text-decoration: none;
+  color: #008FBE; }
+
 body {
   color: #333333;
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
   font-size: 16px;
-  line-height: 1.6; }
+  line-height: 1.6;
+  background-image: url("../img/perfil.png");
+  background-repeat: no-repeat;
+  background-size: 30vw;
+  background-position: right top; }
+  @media (min-width: 660px) {
+    body {
+      background-position-y: -2em; } }
+  @media (min-width: 1024px) {
+    body {
+      background-position-y: -5vw; } }
 
 .wrapper {
   padding: 1em 2em;
@@ -62,46 +85,34 @@ body {
   .wrapper.wide {
     max-width: 65em; }
 
-.poster {
-  display: block;
-  overflow: hidden; }
-  @media (min-width: 768px) {
-    .poster {
-      padding-top: 8em;
-      padding-bottom: 8em; } }
-  .poster h1,
-  .poster h2 {
+@media (min-width: 660px) {
+  .poster {
+    padding-top: 7em;
+    padding-bottom: 7em; } }
+
+@media (min-width: 1024px) {
+  .poster {
+    padding-top: 11em;
+    padding-bottom: 11em; } }
+
+.poster .description {
+  width: 70%; }
+  .poster .description h1,
+  .poster .description h2 {
+    font-family: "Playfair Display", serif;
     font-size: 2em;
     line-height: 1.2; }
-    @media (min-width: 768px) {
-      .poster h1,
-      .poster h2 {
-        line-height: 1.4; } }
-  .poster h2 {
+    @media (min-width: 660px) {
+      .poster .description h1,
+      .poster .description h2 {
+        font-size: 2.5em; } }
+  .poster .description h2 {
     color: #777777; }
-  .poster .description {
-    width: 80%;
-    float: left; }
-  .poster .picture {
-    width: 20%;
-    float: left;
-    background-image: url("../img/perfil.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 2em;
-    right: 0;
-    height: 5em; }
-    @media (min-width: 768px) {
-      .poster .picture {
-        height: 10em;
-        top: 5em; } }
 
 .body h3 {
+  font-family: "Playfair Display", serif;
   color: #C8C8C8;
-  font-weight: bold;
-  font-style: italic;
+  font-weight: 700;
   margin-bottom: 1em; }
 
 .body li {
@@ -111,42 +122,78 @@ body {
   display: block;
   overflow: hidden; }
 
-@media (min-width: 768px) {
-  .body .column {
-    width: 50%;
-    float: left;
-    padding-right: 5em; } }
+.body .column {
+  margin-top: 2em; }
+  @media (min-width: 660px) {
+    .body .column {
+      width: 50%;
+      float: left;
+      margin-top: 0em; } }
 
-.body .background {
-  color: #777777; }
+@media (min-width: 660px) {
+  .body .background {
+    padding-right: 3em; } }
+
+@media (min-width: 660px) {
+  .body .experience {
+    padding-left: 3em; } }
+
+.body .appointment {
+  padding: 4em 0 3em; }
+
+.body small {
+  font-size: .8em; }
+
+.body .button {
+  background: #008FBE;
+  color: #f2f2f2;
+  font-weight: 700;
+  padding: 1em 2em;
+  border-radius: 3px; }
 
 footer .top {
+  background-color: #008FBE;
   display: block;
   overflow: hidden;
-  background: #008FBE;
   padding: 2em 0; }
-  @media (min-width: 768px) {
+  @media (min-width: 660px) {
     footer .top {
-      padding: 2em 0 3em; } }
+      background-color: transparent;
+      background-image: url("../img/blue-poly.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      padding: 11em 0 6em; } }
   footer .top ul {
     display: inline; }
-    @media (min-width: 768px) {
+    @media (min-width: 660px) {
       footer .top ul {
         display: block;
-        width: 33%;
+        width: 20%;
+        margin-right: 20%;
         float: left; } }
+    @media (min-width: 660px) {
+      footer .top ul:last-child {
+        margin-right: 0; } }
   footer .top li {
     display: inline-block; }
-    @media (min-width: 768px) {
+    @media (min-width: 660px) {
       footer .top li {
         display: block; } }
+  footer .top .schedule {
+    font-weight: 700; }
+    @media (min-width: 660px) {
+      footer .top .schedule {
+        width: 10em;
+        padding: .5em 0; }
+        footer .top .schedule a {
+          display: inline; } }
   footer .top a {
-    text-decoration: none;
     border-bottom: 2px solid #f2f2f2;
     padding: .5em;
     line-height: 3;
     color: #f2f2f2; }
-    @media (min-width: 768px) {
+    @media (min-width: 660px) {
       footer .top a {
         display: inline-block;
         border-bottom: 2px solid transparent;
@@ -155,13 +202,39 @@ footer .top {
     footer .top a:link, footer .top a:visited {
       background: rgba(0, 0, 0, 0.2);
       border-bottom: 2px solid #f2f2f2; }
-      @media (min-width: 768px) {
+      @media (min-width: 660px) {
         footer .top a:link, footer .top a:visited {
           background: none;
           border-bottom: 2px solid transparent; } }
     footer .top a:hover, footer .top a:active, footer .top a:focus {
       background: rgba(0, 0, 0, 0.4);
       border-bottom: 2px solid #f2f2f2; }
-      @media (min-width: 768px) {
+      @media (min-width: 660px) {
         footer .top a:hover, footer .top a:active, footer .top a:focus {
           background: none; } }
+
+footer .bottom {
+  padding: 4em 2em;
+  overflow: hidden; }
+
+footer .address {
+  text-align: center; }
+  @media (min-width: 660px) {
+    footer .address {
+      text-align: left;
+      width: 75%;
+      float: left; } }
+
+footer .logo {
+  height: 3em;
+  margin: 3em 0 0;
+  background-image: url("../img/blue-logo.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top; }
+  @media (min-width: 660px) {
+    footer .logo {
+      margin: 0;
+      width: 25%;
+      float: left;
+      background-position: right top; } }
