@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700");
-@import url("https://fonts.googleapis.com/css?family=Lora:400,700");
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -59,24 +59,16 @@ table {
   color: #f2f2f2; }
 
 a {
-  text-decoration: none;
   color: #008FBE; }
+
+em {
+  font-style: italic; }
 
 body {
   color: #333333;
   font-family: "Lora", serif;
   font-size: 16px;
-  line-height: 1.6;
-  background-image: url("../img/perfil.png");
-  background-repeat: no-repeat;
-  background-size: 30vw;
-  background-position: right top; }
-  @media (min-width: 660px) {
-    body {
-      background-position-y: -2em; } }
-  @media (min-width: 1024px) {
-    body {
-      background-position-y: -5vw; } }
+  line-height: 1.6; }
 
 .wrapper {
   padding: 1em 2em;
@@ -84,6 +76,30 @@ body {
   margin: auto; }
   .wrapper.wide {
     max-width: 65em; }
+
+.main {
+  background-image: url("../img/perfil.png");
+  background-repeat: no-repeat;
+  background-size: 30vw;
+  background-position: right top; }
+  @media (min-width: 660px) {
+    .main {
+      background-position-y: -2em; } }
+  @media (min-width: 1024px) {
+    .main {
+      background-position-y: -5vw; } }
+  .main.blur {
+    filter: blur(1px);
+    -webkit-filter: blur(1px); }
+
+h3 {
+  font-family: "Playfair Display", serif;
+  color: #C8C8C8;
+  font-size: 1.5em;
+  font-weight: 700; }
+
+small {
+  font-size: .8em; }
 
 @media (min-width: 660px) {
   .poster {
@@ -110,9 +126,6 @@ body {
     color: #777777; }
 
 .body h3 {
-  font-family: "Playfair Display", serif;
-  color: #C8C8C8;
-  font-weight: 700;
   margin-bottom: 1em; }
 
 .body li {
@@ -138,18 +151,22 @@ body {
   .body .experience {
     padding-left: 3em; } }
 
-.body .appointment {
-  padding: 4em 0 3em; }
-
-.body small {
-  font-size: .8em; }
-
 .body .button {
-  background: #008FBE;
-  color: #f2f2f2;
+  text-decoration: none;
   font-weight: 700;
   padding: 1em 2em;
   border-radius: 3px; }
+
+.body .appointment,
+.body .information {
+  padding: 3em 0 4em; }
+
+.body .appointment .button {
+  background: #008FBE;
+  color: #f2f2f2; }
+
+.body .information .button {
+  border: 1px solid #008FBE; }
 
 footer .top {
   background-color: #008FBE;
@@ -189,6 +206,7 @@ footer .top {
         footer .top .schedule a {
           display: inline; } }
   footer .top a {
+    text-decoration: none;
     border-bottom: 2px solid #f2f2f2;
     padding: .5em;
     line-height: 3;
@@ -238,3 +256,45 @@ footer .logo {
       width: 25%;
       float: left;
       background-position: right top; } }
+
+.dialog {
+  display: none; }
+
+.dialog-overlay {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1); }
+
+.dialog-content {
+  background-color: white;
+  z-index: 3;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 2em;
+  width: 100%;
+  border-radius: 2px;
+  max-width: 54em;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+  @media screen and (min-width: 700px) {
+    .dialog-content {
+      padding: 4em; } }
+  @media screen and (max-height: 600px) {
+    .dialog-content {
+      top: 0;
+      -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0); } }
+  .dialog-content.wide {
+    max-width: 65em; }
+  .dialog-content h3 {
+    font-size: 3em;
+    padding-bottom: 1em;
+    color: #333333; }
