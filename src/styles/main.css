@@ -59,7 +59,9 @@ table {
   color: #f2f2f2; }
 
 a {
-  color: #008FBE; }
+  color: #008FBE;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 143, 190, 0.5); }
 
 em {
   font-style: italic; }
@@ -68,7 +70,17 @@ body {
   color: #333333;
   font-family: "Lora", serif;
   font-size: 16px;
-  line-height: 1.6; }
+  line-height: 1.6;
+  background-image: url("../img/perfil.png");
+  background-repeat: no-repeat;
+  background-size: 30vw;
+  background-position: right top; }
+  @media (min-width: 660px) {
+    body {
+      background-position-y: -2em; } }
+  @media (min-width: 1024px) {
+    body {
+      background-position-y: -5vw; } }
 
 .wrapper {
   padding: 1em 2em;
@@ -77,96 +89,82 @@ body {
   .wrapper.wide {
     max-width: 65em; }
 
-.main {
-  background-image: url("../img/perfil.png");
-  background-repeat: no-repeat;
-  background-size: 30vw;
-  background-position: right top; }
-  @media (min-width: 660px) {
-    .main {
-      background-position-y: -2em; } }
-  @media (min-width: 1024px) {
-    .main {
-      background-position-y: -5vw; } }
-  .main.blur {
-    filter: blur(1px);
-    -webkit-filter: blur(1px); }
-
-h3 {
-  font-family: "Playfair Display", serif;
-  color: #C8C8C8;
-  font-size: 1.5em;
-  font-weight: 700; }
-
 small {
-  font-size: .8em; }
+  font-size: .8rem; }
 
 @media (min-width: 660px) {
-  .poster {
+  .header {
     padding-top: 7em;
     padding-bottom: 7em; } }
 
 @media (min-width: 1024px) {
-  .poster {
-    padding-top: 11em;
+  .header {
+    padding-top: 8em;
     padding-bottom: 11em; } }
 
-.poster .description {
+.header .description {
   width: 70%; }
-  .poster .description h1,
-  .poster .description h2 {
+  .header .description h1,
+  .header .description h2,
+  .header .description h3 {
     font-family: "Playfair Display", serif;
-    font-size: 2em;
+    font-size: 2rem;
     line-height: 1.2; }
     @media (min-width: 660px) {
-      .poster .description h1,
-      .poster .description h2 {
-        font-size: 2.5em; } }
-  .poster .description h2 {
-    color: #777777; }
+      .header .description h1,
+      .header .description h2,
+      .header .description h3 {
+        font-size: 2.5rem; } }
+  .header .description h2 {
+    color: #C8C8C8; }
+  .header .description h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1em; }
+  .header .description h4 {
+    font-weight: 700; }
 
-.body h3 {
-  margin-bottom: 1em; }
-
-.body li {
-  margin-bottom: 1em; }
-
-.body .summary {
-  display: block;
-  overflow: hidden; }
-
-.body .column {
-  margin-top: 2em; }
-  @media (min-width: 660px) {
-    .body .column {
-      width: 50%;
-      float: left;
-      margin-top: 0em; } }
-
-@media (min-width: 660px) {
-  .body .background {
-    padding-right: 3em; } }
-
-@media (min-width: 660px) {
-  .body .experience {
-    padding-left: 3em; } }
-
-.body .button {
-  text-decoration: none;
-  font-weight: 700;
-  padding: 1em 2em;
-  border-radius: 3px; }
-
-.body .appointment,
-.body .information {
-  padding: 3em 0 4em; }
-
-.body .appointment .button {
-  background: #008FBE;
-  color: #f2f2f2; }
-
-.body .information .button {
-  border: 1px solid #008FBE; }
+.page {
+  overflow: auto;
+  width: 100%; }
+  .page li {
+    margin-bottom: 1em; }
+  .page a[href^="http"] {
+    color: #333333;
+    border-bottom: 1px solid #C8C8C8; }
+  .page .column-container {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    position: relative; }
+  .page .column {
+    margin-top: 2em; }
+    @media (min-width: 660px) {
+      .page .column {
+        width: 50%;
+        float: left;
+        margin-top: 0em; } }
+    @media (min-width: 660px) {
+      .page .column:first-child {
+        padding-right: 3em; } }
+    @media (min-width: 660px) {
+      .page .column:last-child {
+        padding-left: 3em; } }
+  .page .actions-container {
+    padding: 5em 0 4em; }
+  .page .button {
+    text-decoration: none;
+    font-weight: 700;
+    padding: 1em 2em;
+    border-radius: 3px;
+    margin-right: 1em; }
+    .page .button:last-child {
+      margin-right: 0; }
+  .page .appointment.button {
+    background: #008FBE;
+    color: white; }
+  .page .information.button {
+    border: 1px solid #008FBE; }
 
 footer .top {
   background-color: #008FBE;
@@ -231,6 +229,9 @@ footer .top {
         footer .top a:hover, footer .top a:active, footer .top a:focus {
           background: none; } }
 
+footer {
+  overflow: hidden; }
+
 footer .bottom {
   padding: 4em 2em;
   overflow: hidden; }
@@ -257,44 +258,13 @@ footer .logo {
       float: left;
       background-position: right top; } }
 
-.dialog {
+.page {
   display: none; }
-
-.dialog-overlay {
-  z-index: 2;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1); }
-
-.dialog-content {
-  background-color: white;
-  z-index: 3;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  padding: 2em;
-  width: 100%;
-  border-radius: 2px;
-  max-width: 54em;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
-  @media screen and (min-width: 700px) {
-    .dialog-content {
-      padding: 4em; } }
-  @media screen and (max-height: 600px) {
-    .dialog-content {
-      top: 0;
-      -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-      transform: translate(-50%, 0); } }
-  .dialog-content.wide {
-    max-width: 65em; }
-  .dialog-content h3 {
-    font-size: 3em;
+  .page.main {
+    display: block; }
+  .page h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 3rem;
     padding-bottom: 1em;
     color: #333333; }

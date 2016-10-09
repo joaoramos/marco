@@ -39,6 +39,8 @@ $playfair: 'Playfair Display', serif;
 
 a {
   color: $colorSea;
+  text-decoration: none;
+  border-bottom: 1px solid rgba($colorSea, .5);
 }
 
 em {
@@ -50,6 +52,14 @@ body {
   font-family: $lora;
   font-size: 16px;
   line-height: 1.6;
+  background-image: url('../img/perfil.png');
+  background-repeat: no-repeat;
+  background-size: 30vw;
+  background-position: right top;
+
+  @include tablet { background-position-y: -2em }
+
+  @include desktop { background-position-y: -5vw }
 }
 
 .wrapper {
@@ -62,41 +72,18 @@ body {
   }
 }
 
-.main {
-  background-image: url('../img/perfil.png');
-  background-repeat: no-repeat;
-  background-size: 30vw;
-  background-position: right top;
-
-  @include tablet { background-position-y: -2em }
-
-  @include desktop { background-position-y: -5vw }
-
-  &.blur {
-    filter: blur(1px);
-    -webkit-filter: blur(1px);
-  }
-}
-
-h3 {
-  font-family: $playfair;
-  color: $colorGreyLight;
-  font-size: 1.5em;
-  font-weight: 700;
-}
-
 small {
-  font-size: .8em;
+  font-size: .8rem;
 }
 
-.poster {
+.header {
   @include tablet {
     padding-top: 7em;
     padding-bottom: 7em;
   }
 
   @include desktop {
-    padding-top: 11em;
+    padding-top: 8em;
     padding-bottom: 11em;
   }
 
@@ -104,39 +91,54 @@ small {
     width: 70%;
 
     h1,
-    h2 {
+    h2,
+    h3 {
       font-family: $playfair;
-      font-size: 2em;
+      font-size: 2rem;
       line-height: 1.2;
 
       @include tablet {
-        font-size: 2.5em;
+        font-size: 2.5rem;
       }
     }
 
     h1 {
-      // font-weight: 700;
     }
 
     h2 {
-      color: $colorGreyMedium;
+      color: $colorGreyLight;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 1em;
+    }
+
+    h4 {
+      font-weight: 700;
     }
   }
 }
 
-.body {
-
-  h3 {
-    margin-bottom: 1em;
-  }
+.page {
+  overflow: auto;
+  width: 100%;
 
   li {
     margin-bottom: 1em;
   }
 
-  .summary {
+  a[href^="http"] {
+    color: $colorGreyDark;
+    border-bottom: 1px solid $colorGreyLight;
+  }
+
+  .column-container {
     display: block;
-    overflow: hidden;
+    overflow: auto;
+    width: 100%;
+    position: relative;
   }
 
   .column {
@@ -147,14 +149,18 @@ small {
       float: left;
       margin-top: 0em;
     }
+
+    &:first-child {
+      @include tablet { padding-right: 3em }
+    }
+
+    &:last-child {
+      @include tablet { padding-left: 3em }
+    }
   }
 
-  .background {
-    @include tablet { padding-right: 3em }
-  }
-
-  .experience {
-    @include tablet { padding-left: 3em }
+  .actions-container {
+    padding: 5em 0 4em;
   }
 
   .button {
@@ -162,19 +168,17 @@ small {
     font-weight: 700;
     padding: 1em 2em;
     border-radius: 3px;
+    margin-right: 1em;
+
+    &:last-child { margin-right: 0 }
   }
 
-  .appointment,
-  .information {
-    padding: 3em 0 4em;
-  }
-
-  .appointment .button {
+  .appointment.button {
     background: $colorSea;
-    color: $colorWhite;
+    color: white;
   }
 
-  .information .button {
+  .information.button {
     border: 1px solid $colorSea;
   }
 }
@@ -268,6 +272,10 @@ footer .top {
   }
 }
 
+footer {
+  overflow: hidden;
+}
+
 footer .bottom {
   padding: 4em 2em;
   overflow: hidden;
@@ -299,53 +307,17 @@ footer .logo {
   }
 }
 
-.dialog {
+.page {
   display: none;
-}
 
-.dialog-overlay {
-  z-index: 2;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.dialog-content {
-  background-color: rgb(255, 255, 255);
-  z-index: 3;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  padding: 2em;
-  width: 100%;
-  border-radius: 2px;
-  max-width: 54em;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-
-  @media screen and (min-width: 700px) {
-    padding: 4em;
-  }
-
-  @media screen and (max-height: 600px) {
-    top: 0;
-    -webkit-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-  }
-
-  &.wide {
-    max-width: 65em;
-  }
+  &.main { display: block }
 
   h3 {
-    font-size: 3em;
+    font-family: $playfair;
+    font-weight: 700;
+    font-size: 3rem;
     padding-bottom: 1em;
     color: $colorGreyDark;
   }
+
 }
