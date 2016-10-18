@@ -83,6 +83,7 @@ body {
       background-position-y: -5vw; } }
 
 .wrapper {
+  position: relative;
   padding: 1em 2em;
   max-width: 50em;
   margin: auto; }
@@ -109,24 +110,33 @@ small {
   .header .description h3 {
     font-family: "Playfair Display", serif;
     font-size: 2rem;
-    line-height: 1.2; }
+    line-height: 1.3; }
     @media (min-width: 660px) {
       .header .description h1,
       .header .description h2,
       .header .description h3 {
         font-size: 2.5rem; } }
-  .header .description h2 {
-    color: #C8C8C8; }
+  .header .description h2,
   .header .description h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-top: 1em; }
+    color: #C8C8C8;
+    font-size: 2.5rem; }
+  .header .description h3 {
+    font-size: 1.5rem; }
   .header .description h4 {
     font-weight: 700; }
 
 .page {
   overflow: auto;
-  width: 100%; }
+  width: 100%;
+  display: none; }
+  .page.main {
+    display: block; }
+  .page h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 3rem;
+    padding-bottom: 1em;
+    color: #333333; }
   .page li {
     margin-bottom: 1em; }
   .page a[href^="http"] {
@@ -165,6 +175,12 @@ small {
     color: white; }
   .page .information.button {
     border: 1px solid #008FBE; }
+  .page .close {
+    border-bottom: none;
+    position: absolute;
+    left: -2rem;
+    font-size: 4rem;
+    top: 0.5rem; }
 
 footer .top {
   background-color: #008FBE;
@@ -194,15 +210,16 @@ footer .top {
     display: inline-block; }
     @media (min-width: 660px) {
       footer .top li {
-        display: block; } }
+        display: block;
+        padding: .5rem 0; }
+        footer .top li a {
+          display: inline; } }
   footer .top .schedule {
     font-weight: 700; }
     @media (min-width: 660px) {
       footer .top .schedule {
         width: 10em;
-        padding: .5em 0; }
-        footer .top .schedule a {
-          display: inline; } }
+        padding: .5em 0; } }
   footer .top a {
     text-decoration: none;
     border-bottom: 2px solid #f2f2f2;
@@ -257,14 +274,3 @@ footer .logo {
       width: 25%;
       float: left;
       background-position: right top; } }
-
-.page {
-  display: none; }
-  .page.main {
-    display: block; }
-  .page h3 {
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    font-size: 3rem;
-    padding-bottom: 1em;
-    color: #333333; }

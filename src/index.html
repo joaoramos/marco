@@ -32,7 +32,8 @@
     <header class="wide wrapper header">
       <div class="description">
         <h1>Marco Ramos</h1>
-        <h2>Psicólogo Clínico e da Saúde. Psicoterapia. Psicologia da Saúde Ocupacional.</h2>
+        <h2>Psicólogo Clínico e da Saúde.</h2>
+        <h3>Psicoterapia. Psicologia da Saúde Ocupacional.</h3>
       </div>
     </header>
 
@@ -59,7 +60,7 @@
         </ul>
         <div class="actions-container">
           <a href="#consulta" class="appointment button">Marcação de consulta</a>
-          <a href="#contacto" class="information button">Pedir informações</a>
+          <a href="#contacto" class="information button">Informações</a>
         </div>
       </div>
     </section>
@@ -67,6 +68,7 @@
     <!-- Consultas -->
     <section class="page" id="consulta">
       <div class="wrapper">
+        <a href="/" class="close">×</a>
         <h3>Consultas</h3>
         <p>Consultas!</p>
       </div>
@@ -75,6 +77,7 @@
     <!-- Conferências -->
     <section class="page" id="conferencias">
       <div class="wrapper">
+        <a href="/" class="close">×</a>
         <h3>Conferências, Palestras</h3>
         <ul>
           <li>
@@ -144,6 +147,7 @@
     <!-- Formação -->
     <section class="page" id="formacao">
       <div class="wrapper">
+        <a href="/" class="close">×</a>
         <h3>Formação</h3>
         <ul>
           <li>
@@ -213,6 +217,7 @@
     <!-- Livros, capítulos e artigos -->
     <section class="page" id="livros-capitulos-artigos">
       <div class="wrapper">
+        <a href="/" class="close">×</a>
         <h3>Livros, capítulos e artigos</h3>
         <ul>
           <li>
@@ -252,6 +257,7 @@
     <!-- Docente -->
     <section class="page" id="docente">
       <div class="wrapper">
+        <a href="/" class="close">×</a>
         <h3>Docente</h3>
         <ul>
           <li>
@@ -321,6 +327,7 @@
     <!-- Publicações -->
     <section class="page" id="publicacoes">
       <div class="wrapper">
+        <a href="/" class="close">×</a>
         <h3>Publicações</h3>
         <ul>
           <li>
@@ -373,6 +380,7 @@
     <!-- Contacto -->
     <section class="page" id="contacto">
       <div class="wrapper">
+        <a href="/" class="close">×</a>
         <h3>Contacto</h3>
         <p>Contacto!</p>
       </div>
@@ -382,21 +390,18 @@
       <nav class="top">
         <div class="wrapper">
           <ul>
-            <li><a href="#conferencias">Conferências</a></li>
-            <li><a href="#conferencias">Palestras</a></li>
-            <li><a href="#formacao">Formações</a></li>
+            <li><a href="#livros-capitulos-artigos">Livros, capítulos e artigos</a></li>
+            <li><a href="#conferencias">Conferências e palestras</a></li>
+          </ul>
+          <ul>
             <li><a href="#publicacoes">Publicações</a></li>
-          </ul>
-          <ul>
-            <li><a href="#livros-capitulos-artigos">Livros</a></li>
-            <li><a href="#livros-capitulos-artigos">Capítulos</a></li>
-            <li><a href="#livros-capitulos-artigos">Artigos</a></li>
-            <li><a href="#">?</a></li>
-          </ul>
-          <ul>
+            <li><a href="#formacao">Formações</a></li>
             <li><a href="#docente">Docência</a></li>
             <li><a href="#contacto">Contacto</a></li>
+          </ul>
+          <ul>
             <li class="schedule"><a href="#consulta">Marcação de consulta</a></li>
+            <li class="schedule"><a href="#consulta">Informações</a></li>
           </ul>
         </div>
       </nav>
@@ -415,28 +420,34 @@
     (function () {
       document.addEventListener('DOMContentLoaded', function () {
 
-        // Opens dialogs
+        window.onhashchange = function() {
+          render();
+        }
 
-        var open = function(target) {
-          var page = target || window.location.hash;
+        // Renders pages
+
+        var render = function() {
+          var page = window.location.hash;
 
           if (page) {
-            window.location.hash = page;
+
+            // Renders new page
             $('.page').hide();
             $(page).show();
+            $('html, body').animate({
+                scrollTop: $(page).offset().top
+            }, 500);
+
+          } else {
+
+            // Renders main page
+            $('.page[id]').hide();
+            $('.main.page').show();
+
           }
         };
 
-        open();
-
-        // Closes pages
-
-        // Adds behavior for anchors
-
-        $('a[href^="#"]').on('click', function(e) {
-          open(e.currentTarget.hash);
-          e.preventDefault();
-        });
+        render();
 
       });
     }());
