@@ -6,7 +6,7 @@ var sass        = require('gulp-sass');
  * Fire static server
  */
 
-gulp.task('dev', ['sass'], function() {
+gulp.task('serve', function() {
 
   browserSync.init({
     server: {
@@ -29,4 +29,4 @@ gulp.task('sass', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('default', ['dev']);
+gulp.task('default', ['serve', 'sass']);

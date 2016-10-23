@@ -84,8 +84,8 @@ small {
   }
 
   @include desktop {
-    padding-top: 8em;
-    padding-bottom: 11em;
+    padding-top: 6em;
+    padding-bottom: 9em;
   }
 
   .description {
@@ -103,21 +103,15 @@ small {
       }
     }
 
-    h1 {
+    h2 {
+      color: $colorGreyLight;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
     }
 
-    h2,
     h3 {
       color: $colorGreyLight;
-      font-size: 2.5rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-    }
-
-    h4 {
-      font-weight: 700;
+      font-size: 2.3rem;
     }
   }
 }
@@ -135,6 +129,10 @@ small {
     font-size: 3rem;
     padding-bottom: 1em;
     color: $colorGreyDark;
+  }
+
+  h4 {
+    font-weight: 700;
   }
 
   li {
@@ -198,8 +196,15 @@ small {
     border-bottom: none;
     position: absolute;
     left: -2rem;
-    font-size: 4rem;
-    top: 0.5rem;
+    top: 2.5rem;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+
+    img {
+      display: block;
+      width: 100%;
+    }
   }
 }
 
