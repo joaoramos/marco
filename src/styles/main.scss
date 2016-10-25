@@ -147,6 +147,10 @@ small {
 
   h4 {
     font-weight: 700;
+
+    a[href^="http"] {
+      color: $colorSea;
+    }
   }
 
   li {

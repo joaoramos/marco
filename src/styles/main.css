@@ -143,6 +143,8 @@ small {
         font-size: 2rem; } }
   .page h4 {
     font-weight: 700; }
+    .page h4 a[href^="http"] {
+      color: #008FBE; }
   .page li {
     margin-bottom: 1em;
     position: relative; }
