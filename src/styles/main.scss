@@ -76,9 +76,10 @@ small {
 }
 
 .header {
+
   @include tablet {
     padding-top: 6em;
-    padding-bottom: 6em;
+    padding-bottom: 4em;
   }
 
   .description {
@@ -121,15 +122,27 @@ small {
   overflow: auto;
   width: 100%;
   display: none;
+  padding-top: 1em;
 
   &.main { display: block }
 
   h3 {
     font-family: $playfair;
     font-weight: 700;
-    font-size: 3rem;
-    padding-bottom: 1em;
+    font-size: 1.5rem;
+    border-bottom: 3px solid $colorGreyDark;
+    display: inline-block;
+    margin-bottom: 2em;
+    padding-bottom: .25em;
     color: $colorGreyDark;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+
+    @include desktop {
+      // font-size: 4.5rem;
+    }
   }
 
   h4 {
@@ -138,6 +151,7 @@ small {
 
   li {
     margin-bottom: 1em;
+    position: relative;
   }
 
   a[href^="http"] {
@@ -179,9 +193,16 @@ small {
     font-weight: 700;
     padding: 1em 2em;
     border-radius: 3px;
-    margin-right: 1em;
+    margin-right: .5rem;
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
 
-    &:last-child { margin-right: 0 }
+    @include tablet {
+      display: inline-block;
+      text-align: left;
+      margin-bottom: 0;
+    }
   }
 
   .appointment.button {
@@ -193,19 +214,52 @@ small {
     border: 1px solid $colorSea;
   }
 
-  .close {
-    border-bottom: none;
+  .num {
     position: absolute;
+    top: 2px;
     left: -2rem;
-    top: 2.5rem;
-    width: 2rem;
-    height: 2rem;
-    display: block;
 
-    img {
-      display: block;
-      width: 100%;
+    @include desktop {
+      left: -2.5rem;
     }
+  }
+
+  .back {
+    border-bottom: none;
+    font-family: Arial;
+    text-transform: uppercase;
+    font-size: .6rem;
+    letter-spacing: 2px;
+    background: $colorGreyLight;
+    padding: .5rem;
+    border-radius: 2px;
+    color: white;
+  }
+
+  .back.top {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 2rem;
+
+    @include desktop {
+      left: -5.25rem;
+      right: auto;
+    }
+  }
+
+  .back.bottom {
+  }
+
+  .indented {
+    li { margin-left: 2rem }
+    p { text-indent: -2rem }
+  }
+
+  .footnote {
+    color: $colorGreyMedium;
+    font-size: .8rem;
+    margin-bottom: 4rem;
   }
 }
 
