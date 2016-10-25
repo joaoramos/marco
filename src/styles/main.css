@@ -71,16 +71,13 @@ body {
   font-family: "Lora", serif;
   font-size: 16px;
   line-height: 1.6;
-  background-image: url("../img/perfil.png");
+  background-image: url("../img/perfil.jpg");
   background-repeat: no-repeat;
-  background-size: 30vw;
-  background-position: right top; }
-  @media (min-width: 660px) {
-    body {
-      background-position-y: -2em; } }
+  background-size: 25vw;
+  background-position: right 1rem; }
   @media (min-width: 1024px) {
     body {
-      background-position-y: -5vw; } }
+      background-position-y: 6rem; } }
 
 .wrapper {
   position: relative;
@@ -95,16 +92,11 @@ small {
 
 @media (min-width: 660px) {
   .header {
-    padding-top: 7em;
-    padding-bottom: 7em; } }
-
-@media (min-width: 1024px) {
-  .header {
     padding-top: 6em;
-    padding-bottom: 9em; } }
+    padding-bottom: 6em; } }
 
 .header .description {
-  width: 70%; }
+  width: 85%; }
   .header .description h1,
   .header .description h2,
   .header .description h3 {
@@ -121,8 +113,14 @@ small {
     font-size: 1.5rem;
     margin-bottom: 2rem; }
   .header .description h3 {
-    color: #C8C8C8;
-    font-size: 2.3rem; }
+    color: #333333;
+    font-weight: 700; }
+    @media (min-width: 660px) {
+      .header .description h3 {
+        font-size: 3.5rem; } }
+    @media (min-width: 1024px) {
+      .header .description h3 {
+        font-size: 4.5rem; } }
 
 .page {
   overflow: auto;

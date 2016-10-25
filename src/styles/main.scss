@@ -52,14 +52,12 @@ body {
   font-family: $lora;
   font-size: 16px;
   line-height: 1.6;
-  background-image: url('../img/perfil.png');
+  background-image: url('../img/perfil.jpg');
   background-repeat: no-repeat;
-  background-size: 30vw;
-  background-position: right top;
+  background-size: 25vw;
+  background-position: right 1rem;
 
-  @include tablet { background-position-y: -2em }
-
-  @include desktop { background-position-y: -5vw }
+  @include desktop { background-position-y: 6rem }
 }
 
 .wrapper {
@@ -79,17 +77,12 @@ small {
 
 .header {
   @include tablet {
-    padding-top: 7em;
-    padding-bottom: 7em;
-  }
-
-  @include desktop {
     padding-top: 6em;
-    padding-bottom: 9em;
+    padding-bottom: 6em;
   }
 
   .description {
-    width: 70%;
+    width: 85%;
 
     h1,
     h2,
@@ -110,8 +103,16 @@ small {
     }
 
     h3 {
-      color: $colorGreyLight;
-      font-size: 2.3rem;
+      color: $colorGreyDark;
+      font-weight: 700;
+
+      @include tablet {
+        font-size: 3.5rem;
+      }
+
+      @include desktop {
+        font-size: 4.5rem;
+      }
     }
   }
 }
