@@ -1,0 +1,16 @@
+# Site variables
+title: Marco Ramos – Psicólogo Clínico e da Saúde
+description: Psicoterapia e Psicologia da Saúde Ocupacional
+summary: Psicoterapeuta em prática clínica privada em Viseu e Aveiro
+url: http://marcoramos.pt
+
+# Build settings
+markdown: kramdown
+theme:
+gems:
+exclude:
+  - Gemfile
+  - Gemfile.lock
+sass:
+  sass_dir: assets/styles
+  style: compressed

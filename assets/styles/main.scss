@@ -1,6 +1,9 @@
+---
+---
+
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
 @import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700');
-@import 'reset';
+@import 'reset.scss';
 
 $colorSea:          #008FBE;
 $colorWhite:        #f2f2f2;
@@ -52,7 +55,7 @@ body {
   font-family: $lora;
   font-size: 16px;
   line-height: 1.6;
-  background-image: url('../img/perfil.jpg');
+  background-image: url('../image/perfil.jpg');
   background-repeat: no-repeat;
   background-size: 25vw;
   background-position: right 1rem;
@@ -121,10 +124,7 @@ small {
 .page {
   overflow: auto;
   width: 100%;
-  display: none;
   padding-top: 1em;
-
-  &.main { display: block }
 
   h3 {
     font-family: $playfair;
@@ -275,7 +275,7 @@ footer .top {
 
   @include tablet {
     background-color: transparent;
-    background-image: url('../img/blue-poly.svg');
+    background-image: url('../image/blue-poly.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
@@ -379,7 +379,7 @@ footer .address {
 footer .logo {
   height: 3em;
   margin: 3em 0 0;
-  background-image: url('../img/blue-logo.svg');
+  background-image: url('../image/blue-logo.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center top;

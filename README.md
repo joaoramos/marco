@@ -1,6 +1,5 @@
-## To-do
+# Marco Ramos
+Website for my brother Marco Ramos, live at [marcoramos.pt](http://marcoramos.pt). Built with Jekyll, deployed to GitHub Pages.
 
-* Add appointment form
-* Add copy to dialogs
-* Add :hover styles
-* Add tracking events
+## To-do
+* Add microdata

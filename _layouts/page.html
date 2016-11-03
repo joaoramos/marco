@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ site.title }}</title>
+
+    <meta name="description" content="{{ site.description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Marco Ramos" />
+    <meta name="twitter:description" content="{{ site.summary }}" />
+    <meta name="twitter:image" content="{{ site.url }}/assets/image/perfil.jpg" />
+    <meta name="twitter:url" content="{{ site.url }}" />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Marco Ramos" />
+    <meta property="og:title" content="{{ site.title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}" />
+    <meta property="og:image" content="{{ site.url }}/assets/image/perfil.jpg" />
+    <meta property="og:description" content="{{ site.summary }}" />
+
+    <link rel="stylesheet" media="all" href="assets/styles/main.css">
+  </head>
+
+  <body>
+
+  {% include header.html %}
+
+  {{ content }}
+
+  {% include footer.html %}
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-3813449-52', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  </body>
+</html>
