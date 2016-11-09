@@ -14,6 +14,43 @@ $colorGreyLight:    #C8C8C8;
 $lora: 'Lora', serif;
 $playfair: 'Playfair Display', serif;
 
+// Animation
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 // Mixins
 @mixin tablet {
   @media (min-width: 660px) {
@@ -124,6 +161,10 @@ small {
 }
 
 .page {
+  opacity: 0;
+  animation: fadeIn ease-in-out 1;
+  animation-fill-mode: forwards;
+  animation-duration: .3s;
   overflow: auto;
   width: 100%;
 
