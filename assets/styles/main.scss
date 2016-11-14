@@ -135,13 +135,19 @@ small {
       }
     }
 
-    h1 {
+    a {
+      color: $colorGreyDark;
       width: 85%;
+      display: block;
+      border: none;
+      width: 20em;
+    }
+
+    h1 {
       font-size: calc(2rem + .5vw);
     }
 
     h2 {
-      width: 70%;
       color: $colorGreyLight;
       font-size: calc(1rem + .5vw);
       margin-bottom: 2rem;
@@ -156,6 +162,8 @@ small {
         width: 85%;
         font-size: calc(3.5rem + 1vw);
       }
+
+      @include desktop { width: 75% }
     }
   }
 }
