@@ -168,6 +168,13 @@ small {
   }
 }
 
+.main {
+  a[href^="http"] {
+    color: $colorGreyDark;
+    border-bottom: 1px solid $colorGreyLight;
+  }
+}
+
 .page {
   opacity: 0;
   animation: fadeIn ease-in-out 1;
@@ -217,11 +224,6 @@ small {
   li {
     margin-bottom: 1em;
     position: relative;
-  }
-
-  a[href^="http"] {
-    color: $colorGreyDark;
-    border-bottom: 1px solid $colorGreyLight;
   }
 
   .column-container {
